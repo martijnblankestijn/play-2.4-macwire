@@ -1,4 +1,4 @@
-# Compile Time Depenency Injection with MacWire
+# Compile Time Dependency Injection with MacWire
 
 A lot of examples that has to do with Compile Time Dependency Injection using the Play! Framework 2.4 just deal with
 the simple cases. How to get it running or how to inject a service into a controller.
