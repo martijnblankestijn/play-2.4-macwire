@@ -1,0 +1,22 @@
+<configuration>
+  <conversionRule conversionWord="coloredLevel" converterClass="play.api.Logger$ColoredLevel" />
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%coloredLevel - %logger - %message%n%xException</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="play" level="INFO" />
+  <logger name="application" level="trace" />
+  <logger name="com.zaxxer.hikari" level="INFO" />
+  <logger name="slick.jdbc.JdbcBackend.statement" level="DEBUG" />
+  <logger name="slick.jdbc.StatementInvoker.result" level="INFO" />
+  <logger name="slick.compiler.QueryCompilerBenchmark" level="INFO" />
+
+
+
+  <root level="ERROR">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>

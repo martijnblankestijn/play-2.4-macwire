@@ -1,0 +1,10 @@
+GET           /locations                           controllers.LocationApi.all
+DELETE        /locations                           controllers.LocationApi.deleteAll
+POST          /locations                           controllers.LocationApi.save
+
+GET           /locations/:id                       controllers.LocationApi.get(id: Long)
+DELETE        /locations/:id                       controllers.LocationApi.delete(id: Long)
+GET           /addresses/:postalCode/:houseNumber  controllers.LocationApi.getAddress(postalCode: String, houseNumber: Int)
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file                        controllers.Assets.versioned(path="/public", file: Asset)
