@@ -43,7 +43,7 @@ play.evolutions.db.default.autoApply=true
 
 slick.dbs.default.driver= "slick.driver.PostgresDriver$"
 slick.dbs.default.db.driver="org.postgresql.Driver"
-slick.dbs.default.db.url=${?DATABASE_JDBC_FORMAT_URL}
+slick.dbs.default.db.url=${?JDBC_DATABASE_URL}
 ```
 
 `play.evolutions.db.default.autoApply=true` enables automatically applying database-changes.
