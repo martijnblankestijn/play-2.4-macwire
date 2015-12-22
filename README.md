@@ -81,7 +81,7 @@ If you leave that comment out, you can have a beautifully crafted SQL-file, but 
 I know, it is stated perfectly in the [Play Documentation](https://www.playframework.com/documentation/2.4.x/Evolutions#Evolutions-scripts).
 But hey, are we always looking at the documentation ;-).
 
-### Slugsize problems
+### Slug size problems
 
 I got errors on the slug size:
 
@@ -103,3 +103,5 @@ So the application is not recognized as Play 2 Application, and therefore does n
 
 
 Adding a dummy file (```conf/application.conf```) will trigger the scala buildpack to see this project as a Play 2.4 application,
+
+Created an [issue](https://github.com/heroku/heroku-buildpack-scala/issues/108) to a get a more flexible way for Play 2.4 detection.
