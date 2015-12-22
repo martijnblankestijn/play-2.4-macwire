@@ -28,7 +28,9 @@ libraryDependencies ++= Seq(
 
 )
 
-
+resolvers ++= Seq(
+  "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
+)
 // Hack to have the maximum parallelism in test to 1
 // TODO investigate
 concurrentRestrictions in Global += Tags.limit(Tags.Test, 1)
