@@ -90,8 +90,16 @@ I got errors on the slug size:
  !   Compiled slug size: 304.7MB is too large (max is 300MB).
 ```
 
-I was using the buildpack for [scala](http://github.com/heroku/heroku-buildpack-scala.git) 
-and should have been using the buildpack for [play](http://github.com/heroku/heroku-buildpack-play.git).
-This reduce the size of the slug from over 300 MB to (be tested) MB.
+The build log said
+```
+-----> Scala app detected
+```
+
+but this was wrong. Comparing it to another application, I could find no differences between the Heroku configuration.
+Looking at the [activation of the Play framework](-----> Scala app detected) for Heroku I read the following 
+"Heroku Play framework support will be applied to applications that match: */conf/application.conf".
+As I use the standard SBT layout the ```application.conf``` resides in ```src/main/resources```.
+So the application is not recognized as Play 2 Application, and therefore does not clean up a.o. the ivy2 cache.
 
 
+Adding a dummy file (```conf/application.conf```) will trigger the scala buildpack to see this project as a Play 2.4 application,
