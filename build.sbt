@@ -1,4 +1,4 @@
-name := "play-course-macwire-app"
+name := "play-macwire"
 
 scalaVersion := "2.11.7"
 
