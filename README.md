@@ -80,3 +80,8 @@ If you leave that comment out, you can have a beautifully crafted SQL-file, but 
 
 I know, it is stated perfectly in the [Play Documentation](https://www.playframework.com/documentation/2.4.x/Evolutions#Evolutions-scripts).
 But hey, are we always looking at the documentation ;-).
+
+### Slugsize problems
+Added the following command to the Heroku application
+```heroku config:add BUILDPACK_URL=http://github.com/heroku/heroku-buildpack-scala.git --app <APPNAME>```
+as suggested on [stackoverflow](http://stackoverflow.com/questions/10515954/reduce-slug-size-for-heroku-with-play-2-0-scala).
