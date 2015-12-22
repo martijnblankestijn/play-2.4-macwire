@@ -8,7 +8,7 @@ And configure a [PostgreSQL](http://www.postgresql.org/) database
 with [Slick 3.1](http://slick.typesafe.com/doc/3.1.0/) 
 and Play [managing the database evolutions](https://www.playframework.com/documentation/2.4.x/Evolutions).
 
-## Run it
+## Run it locally
 Running the whole setup is easy (I hope ;-)).
 Prerequisites for running this project is that you have [sbt](http://www.scala-sbt.org/) 
 and ['Docker Machine'](https://docs.docker.com/machine/) installed.
@@ -17,6 +17,15 @@ In the root of the project there is a `runlocal.sh` script that will build a doc
 and will run the Play applcation through `sbt run`.
 
 If docker and sbt have downloaded the internet ;-), you can access the application through [http://localhost:9000](http://localhost:9000/locations).
+
+## Run it on Heroku
+I use the following 'Config Vars' on Heroku.
+
+```
+ SBT_CLEAN=true
+ PLAY_CONF_FILE=application.conf
+ APPLICATION_SECRET=<sbt playGenerateSecret>
+```
 
 ## Structure
 
@@ -40,7 +49,6 @@ The configuration in the `src/main/resources/application.conf` configures the us
 
 ```
 play.evolutions.db.default.autoApply=true
-
 slick.dbs.default.driver= "slick.driver.PostgresDriver$"
 slick.dbs.default.db.driver="org.postgresql.Driver"
 slick.dbs.default.db.url=${?JDBC_DATABASE_URL}
@@ -104,4 +112,5 @@ So the application is not recognized as Play 2 Application, and therefore does n
 
 Adding a dummy file (```conf/application.conf```) will trigger the scala buildpack to see this project as a Play 2.4 application,
 
-Created an [issue](https://github.com/heroku/heroku-buildpack-scala/issues/108) to a get a more flexible way for Play 2.4 detection.
+Created an [issue](https://github.com/heroku/heroku-buildpack-scala/issues/108) to a get a more flexible way 
+for Play 2.4 detection with.
