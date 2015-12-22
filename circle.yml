@@ -1,6 +1,11 @@
 machine:
   java:
     version: oraclejdk8
+  services:
+    - postgresql
+  environment:
+    JDBC_DATABASE_URL: jdbc:postgresql://ubuntu:@127.0.0.1:5432/circle_test
+
 dependencies:
   cache_directories:
     - "~/.sbt"
