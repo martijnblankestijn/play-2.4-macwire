@@ -82,6 +82,16 @@ I know, it is stated perfectly in the [Play Documentation](https://www.playframe
 But hey, are we always looking at the documentation ;-).
 
 ### Slugsize problems
-Added the following command to the Heroku application
-```heroku config:add BUILDPACK_URL=http://github.com/heroku/heroku-buildpack-scala.git --app <APPNAME>```
-as suggested on [stackoverflow](http://stackoverflow.com/questions/10515954/reduce-slug-size-for-heroku-with-play-2-0-scala).
+
+I got errors on the slug size:
+
+```
+-----> Compressing... 
+ !   Compiled slug size: 304.7MB is too large (max is 300MB).
+```
+
+I was using the buildpack for [scala](http://github.com/heroku/heroku-buildpack-scala.git) 
+and should have been using the buildpack for [play](http://github.com/heroku/heroku-buildpack-play.git).
+This reduce the size of the slug from over 300 MB to (be tested) MB.
+
+
