@@ -54,7 +54,7 @@ trait DatabaseModule extends SlickComponents
 
   def onStart() = {
     Logger.info("Applying evolutions")
-    applicationEvolutions
+    applicationEvolutions.start()
   }
 
   onStart()
